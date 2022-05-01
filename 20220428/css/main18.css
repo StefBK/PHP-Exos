@@ -1,0 +1,17 @@
+section/:nth-child(1){
+    width: 800px;
+    height: 35px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+section:nth-child(2){
+    width: 600px;
+    line-height: 35px;
+    margin: auto;
+    font-size: 2em;
+}

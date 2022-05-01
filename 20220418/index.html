@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Mon Formulaire</title>
+</head>
+<body>
+    <section>
+        <form action="traitement.php" method="POST" enctype="multipart/form-data">
+            <label>Civilité</label>
+            <select size="1" name="sexe">
+                <option value=""></option>
+                <option value="Madame">Madame</option>
+                <option value="Monsieur">Monsieur</option>
+            </select>
+            <br/>
+            <label>Nom</label>
+            <input type="text" name="nom" required placeholder="Saisir votre nom">
+            <br/>
+            <div>
+                <input type="submit" name="envoyer" value="ENVOYER"/>
+                <input type="reset" name="annuler" value="ANNULER"/>
+            </div>
+        </form>
+    </section>    
+</body>
+</html>

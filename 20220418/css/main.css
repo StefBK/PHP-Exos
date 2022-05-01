@@ -1,0 +1,60 @@
+*{
+    margin:0px;
+    padding:opx;
+    box-sizing: border-box;
+}
+
+body{
+    font-size:62.5%;
+    background-color: cyan;
+}
+
+section{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+form{
+    margin: auto;
+    width: 40vw;
+    height: 30vh;
+    border:1px solid #ccc;
+    font-size:1.5rem;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+form label{
+    margin-left: 200px;
+    margin-top: 30px;
+    width: 200px;
+    display:inline-block;
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+    color: blueviolet;
+    padding: 5px 0 5px 2px;
+}
+
+input[type="text"], select{
+    width: 220px;
+    height: 35px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="submit"], input[type="reset"]{
+    width: 100px;
+    height: 50px;
+    margin: 2px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-image: linear-gradient(90deg, magenta, blueviolet);
+    color: white;
+    font-weight: bold;
+}
