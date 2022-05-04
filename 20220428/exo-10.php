@@ -46,16 +46,8 @@
                     echo("</td></tr>");
                     $compteur++;
                 }
-            
             echo("</table>");
 
-            // Compter le nombre de caractères à remplacer suivant son choix de caractère
-            $caractere=$_POST['trouver'];
-            // Récupérer le caractère de remplacement
-            $newcaractere=$_POST['remplacer'];
-            // Là où sera stocké le nouveau mot
-            $newtexte=$texte;
-            
             // Parcourir la STR
             $compteur=0;
             $nbcar=0;
@@ -68,25 +60,33 @@
             }
             if($nbcar!=0){
                 echo("Vous avez dans votre chaîne de caractères : ".$nbcar." caractère(s) trouvé(s) !<br/>");
-                echo "Après traitement, la chaîne de caractère a été remplacée par ".$newtexte." : <br/>";
-                echo("<table>");
-                $compteur=0;
-                while($compteur<$nb_apres_traitement){
-                    echo("<tr><td>");
-                    echo($newtexte[$compteur]);
-                    echo("</td></tr>");
-                    $compteur++;
-            }
-
             }
             else{
                 echo("Vous n'avez aucun caractère trouvé !");
             }
 
-
-
+            // Compter le nombre de caractères à remplacer suivant son choix de caractère
+            $caractere=$_POST['trouver'];
+            // Récupérer le caractère de remplacement
+            $newcaractere=$_POST['remplacer'];
+            echo("<section>");
+                $compteur=0;
+                echo("<table>");
+                while($compteur<$nb_apres_traitement){
+                    echo("<tr><td>");
+                        if($caractere===$texte[$compteur]){
+                            $texte[$compteur]=$newcaractere;
+                            echo($texte[$compteur]);
+                        }
+                        else{
+                            echo($texte[$compteur]);
+                        }
+                    echo("</td></tr>");
+                    $compteur++;
+                }
+                echo("</table>");
+            echo("</section>");
         }
-
         ?>
     </body>
 </html>

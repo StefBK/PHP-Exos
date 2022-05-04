@@ -7,7 +7,8 @@
     </head>
     <body>
         <section>
-            <h1>Vous êtes autorisé à accéder à cette page !</h1>
+            <h1>Vous êtes correctement authentifié !</h1>
+            <button onclick="history.back()">Retour</button>
         </section>
     </body>
 </html>

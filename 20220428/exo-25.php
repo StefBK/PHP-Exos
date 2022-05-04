@@ -33,6 +33,7 @@ La redirection se fait avec la méthode HEADER() qui permet de rediriger vers un
                         header('Location: exo-25-noauthentification.php');
                 }
             ?>
+            <!-- Voir variable statique pour conserver un compteur -->
         </section>
     </body>
 </html>
