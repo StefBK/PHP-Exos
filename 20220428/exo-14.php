@@ -17,5 +17,19 @@
             <input type="text"/>
         <?php endwhile;?>
         </form>
+
+        <!-- WHILE sans intégration HTML -->
+        <?php
+            $longueur=5;
+            $compteur=0;
+        ?>
+        <form action="">
+        <?php 
+        while($compteur<$longueur){
+            echo("<input type='text'/>");
+            $compteur++;
+        }
+        ?>
+        </form>
     </body>
 </html>

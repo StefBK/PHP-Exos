@@ -2,7 +2,7 @@
 <html lang="FR-fr">
     <head>
         <meta charset="utf-8">
-        <title>Ma première page en php</title>
+        <title>Table de multiplication</title>
         <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>

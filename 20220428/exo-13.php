@@ -16,48 +16,90 @@ Indice : Les champs d'un formulaire sont des éléments de tableau. Chaque formu
     <head>
         <meta charset="utf-8">
         <title>Ma première page en php</title>
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/main13.css" />
     </head>
     <body>
-        <form action="">
-            <div>
-                <!-- Saisie du nombre de compétences -->
-                <section>
-                    <form action="exo-13.php" method="POST" enctype="multipart/form-data">
-                        <label>Combien de compétences souhaitez-vous rajouter à votre CV ?</label>
-                        <input type="text" name="nb" placeholder="Saisir un nombre entier" maxlength="2" required />
-                        <br/>
-                        <input type="submit" value="Soumettre" name="envoyer1" />
-                        <input type="reset" value="Effacer" name="annuler1" />
-                    </form>
-                </section>
-                <!-- Récupération du nombre de compétences -->
-                <section>
-                    <?php
-                        if(isset($_POST['envoyer1'])){
-                            $nb=$_POST['nb'];
-                            // Création d'autant de champs "Compétence" que demandé
-                            for ($compteur=1;$compteur<=$nb;$compteur++){
-                                $nameform="competence".$compteur;
-                                $placeholderform="Compétence N°".$compteur;
-                                echo("<form action='exo-13.php' method='POST' enctype='multipart/form-data'>");
-                                    echo("<label>Compétences</label>");
-                                    echo("<input type='text' name=$nameform placeholder=$placeholderform maxlength='25' required /><br/>");
-                                    echo("");
-                            }
-                            echo("<input type='submit' value='Soumettre' name='envoyer2' />");
-                            echo("<input type='reset' value='Effacer' name='annuler2' />");
-                            echo("</form");
+        <!-- Saisie du nombre de compétences -->
+        <section>
+            <form action="exo-13.php" method="POST" enctype="multipart/form-data">
+                <label>Combien de compétences souhaitez-vous rajouter à votre CV ?</label>
+                <input type="text" name="choix" placeholder="Saisir un nombre entier" maxlength="2" required />
+                <br/>
+                <input type="submit" value="Soumettre" name="envoyer" />
+            </form>
+        </section>
+        <!-- Récupération du nombre de compétences -->
+        <section>
+            <form action="exo-13.php" method="POST" enctype="multipart/form-data">
+                <?php
+                    if(isset($_POST['envoyer'])){
+                        $nb=$_POST['choix'];
+                        for($i=1;$i<=$nb;$i++){
+                            echo("<input type='text' name='choix[]' placeholder='Saisir une compétence' maxlength='25' required /><br/>");
                         }
-                    ?>
-                </section>
-                <!-- Affichage des commpétences saisies -->
-                <!-- <section> -->
-                    <?php
-                        // if(isset($_POST))
-                    ?>
-                <!-- </section> -->
-            </div>
-        </form>
+                    }
+                ?>
+                <input type="submit" value="Soumettre" name="soumettre" />
+            </form>
+        </section>
+        <section>
+            <table>
+                <?php
+                    // Méthode 1 : Avec FOR
+                    if(isset($_POST['soumettre'])){
+                        // print_r affiche un tableau avec les clefs/valeurs
+                        // print_r($_POST['choix']);
+                        $nb=count($_POST['choix']);
+                        for($i=0;$i<$nb;$i++){
+                            echo ("<tr><td>".$_POST['choix'][$i]."</td></td>");
+                        }
+                    }
+                ?>
+            </table>
+        </section>
+        <section>
+            <table>
+                <?php
+                    // Méthode 2 : Avec FOR EACH
+                    if(isset($_POST['soumettre'])){
+                    // $POST est un TABLEAU, AS pointe vers la CLEF (INDEX) à laquelle on associe la VALEUR
+                        foreach($_POST['choix'] AS $indice=>$valeur){
+                            // Tableau à 2 colonnes, 1 pour la clef, 1 pour la valeur
+                            echo("<tr><td>".$indice."</td><td>".$valeur."</td></tr>");
+                        }
+                    }
+                ?>
+            </table>
+        </section>
+        <section>
+            <table>
+                <?php
+                    // Méthode 3 : Avec WHILE
+                    if(isset($_POST['soumettre'])){
+                        $nb=count($_POST['choix']);
+                        $i=0;
+                        while($i<$nb){
+                            echo ("<tr><td>".$_POST['choix'][$i]."</td></td>");
+                            $i++;
+                        }
+                    }
+                ?>
+            </table>
+        </section>
+        <section>
+            <table>
+                <?php
+                    // Méthode 4 : Avec DO WHILE
+                    if(isset($_POST['soumettre'])){
+                        $nb=count($_POST['choix']);
+                        $i=0;
+                        do{
+                            echo ("<tr><td>".$_POST['choix'][$i]."</td></td>");
+                            $i++;
+                        }while($i<$nb);
+                    }
+                ?>
+            </table>
+        </section>
     </body>
 </html>

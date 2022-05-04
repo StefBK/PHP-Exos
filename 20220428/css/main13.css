@@ -1,0 +1,53 @@
+section{
+    width: 600px;
+    height: 15vh;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: coral;
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+section:nth-child(2), section:nth-child(3){
+    width: 600px;
+    height: auto;
+    padding: 5px;
+    border-radius:10px;
+    background-color: coral;
+    color: white;
+    margin: 15px auto;
+    text-align: center;
+}
+
+section:nth-child(3) tr{
+    height: 25px;    
+}
+
+section:nth-child(3) td{
+    width: 200px;
+    background-color: azure;
+    text-align: center;
+    margin: 1px;   
+}
+
+table{
+    margin: auto;
+}
+
+table{
+    width: 200px;
+    margin: auto;
+}
+
+td{
+    margin: auto;
+    height: 35px;
+    width: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: cadetblue;
+}
+
