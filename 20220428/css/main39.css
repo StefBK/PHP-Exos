@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+body{
+    background-color: darkviolet;
+    text-align: center;
+}
+
+section{
+    color: cyan;
+    background-color: magenta;
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 90%;
+    margin: 5vh 5vw 5vh 5vw;
+    padding: 2vh 2vw 2vh 2vw;
+    line-height: 2rem;
+}
+
+.ope{
+    width: 1vw;
+}
+
+.val{
+    width: 10vw;
+}

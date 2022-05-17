@@ -5,7 +5,7 @@
     echo implode('/',$tableau)."<br/>";
 
     //EXPLODE découpe des éléments de TABLEAU
-    $chaine=explode("/","Ah que coucou / le/s Geeks DWWM");
+    $chaine=explode("/","Ah que coucou / les Geeks DWWM");
         foreach($chaine as $valeur){
             echo $valeur."<br/>";
         }

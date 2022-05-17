@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Roboto&family=Roboto+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+body{
+    margin-top: 2vh;
+    background-color: darkviolet;
+    text-align: center;
+}
+
+h1{
+    color: cyan;
+    font-family: 'Macondo', cursive;
+    font-size: 5rem;
+}
+
+.form{
+    width: 30vw;
+}
+
+section{
+    color: cyan;
+    background-color: magenta;
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 60%;
+    margin: auto;
+    /* margin: 5vh 20vw 5vh 20vw; */
+    padding: 2vh 2vw 2vh 2vw;
+    /* line-height: 2rem; */
+}
