@@ -4,19 +4,20 @@
         $next=str_repeat("<>~<>",10);
         $fichier=fopen($gold,"a+");
         $date=date("d/m/Y à H:i");
+        //$date=date('\l\e j-m-y à H : i : s'); => le \ empêche l'affichage correspondant à l (code pour le jour en anglais) et e (normalisation) sinon si 'le' afficherait 'tuesday UTC'
         $nom=$_POST['nom'];
         $objet=$_POST['objet'];
         $msg=$_POST['msg'];
-        $entree="<br/> Le ".$date."<br/>".$nom." a écrit :<br/>".$objet." : ".$msg."<br/>".$next;
-        fwrite($fichier,$entree);
+        $entree="\n Le ".$date."\n".$nom." a écrit :\n".$objet." : ".$msg."\n".$next;
+        fwrite($fichier,htmlspecialchars($entree));
         fclose($fichier);
         echo $_POST['nom'];
         // méthode htmlspecialchars :
         // fwrite($fichier,htmlspecialchars($_POST['nom'])."\n");
         // Utiliser \n au lieu de br car br n'est pas interprété dans un fichier texte et les messages ne sont que sur une ligne (illisible même si pas faux)
         // Permet d'éviter d'avoir des caractères spéciaux et les convertit en protégeant ce qui est récupéré
+        // Protège d'injection de code XSS
         // Sinon htmlentities
-
     }
 ?>
 <!DOCTYPE html>
