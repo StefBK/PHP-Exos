@@ -63,18 +63,25 @@
         
         echo("<h2>Affichage des Répertoires</h2>");
         // Ouvrir le Répertoire
-        $dir=opendir('./fichier');
+        // $dir=opendir('./fichier');
         // echo $dir;
         // =>"Resource id #3."
 
-        // Lire le contenu de $dir avec WHILE
-        while($fichier=readdir($dir)){
-            echo $fichier,'<br/>';
-        }
+        // Lire le contenu de $dir avec WHILE et READDIR
+        // while($fichier=readdir($dir)){
+        //     echo $fichier,'<br/>';
+        // }
 
         // Fermer l'instance de Fichier
-        closedir($dir);
+        // closedir($dir);
 
+        //Lire le contenu d"un dossier avec SCANDIR et FOREACH
+        $fichier=scandir('./fichier');
+        // Parcourir le résultat
+        foreach($fichier as $fichier){
+            echo $fichier."<br/>";
+        }
+        closedir($dir);
 
         ?>
     </body>
