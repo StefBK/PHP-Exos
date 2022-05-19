@@ -24,19 +24,37 @@
     }
 
     //Vérifier
+    $total_prix=0;
     if(isset($_POST['verifier'])){
         $tab_code=explode("/",$_SESSION['code']);
         $tab_article=explode("/",$_SESSION['article']);
         $tab_prix=explode("/",$_SESSION['prix']);
 
-        echo "<table>";
+        echo "<table class='tabverif'>";
         echo "<tr><td colspan='3'>RÉCAPITULATIF DE VOTRE COMMANDE</td></tr>";
-        echo "<tr><th>&nbsp;Code&nbsp;</th><th>&nbsp,Article&nbsp;</th><th>&nbsp;Prix&nbsp;</th></tr>";
+        echo "<tr><th>&nbsp;CODE&nbsp;</th><th>&nbsp;ARTICLE&nbsp;</th><th>&nbsp;PRIX&nbsp;</th></tr>";
             for($i=1;$i<count($tab_code);$i++){
-
+                // echo "<tr><td>&nbsp;".$tab_code[$i]."&nbsp;</td><td>&nbsp;".$tab_article[$i]."&nbsp;</td><td>&nbsp;".$tab_prix[$i]."</td></tr>";
+                echo "<tr><td>&nbsp;$tab_code[$i]&nbsp;</td><td>&nbsp;$tab_article[$i]&nbsp;</td><td class='total_prix'>&nbsp;".sprintf('%01.2f €',$tab_prix[$i])."</td></tr>";
+                $total_prix+=$tab_prix[$i];
             }
+        echo "<tr><td class='total_prix' colspan='3'>".sprintf('%01.2f €',$total_prix)."</td></tr>";
         echo "</table>";
     }
+
+    //Enregistrer
+    if(isset($_POST['enregistrer'])){
+        $fichier=fopen('exo-51-panier.txt','w');
+        $tab_code=explode("/",$_SESSION['code']);
+        $tab_article=explode("/",$_SESSION['article']);
+        $tab_prix=explode("/",$_SESSION['prix']);
+        for($i=1;$i<count($tab_code);$i++){
+            fwrite($fichier,"\r\n");
+            fwrite($fichier,$tab_code[$i]." | ".$tab_article[$i]." | ".$tab_prix[$i]);
+        }
+        fclose($fichier);
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -75,9 +93,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="code">PRIX</label></td>
+                                <td><label for="prix">PRIX</label></td>
                                 <td>
-                                    <input class="form" type="number" name="prix" placeholder="Prix de l'Article" maxlength="40"/>
+                                    <input class="form" type="text" name="prix" placeholder="Prix de l'Article" maxlength="40"/>
                                 </td>
                             </tr>
                         </tbody>
@@ -86,6 +104,7 @@
                                 <td colspan="2">
                                     <input type="submit" value="AJOUTER" name="ajouter" />
                                     <input type="submit" value="VÉRIFIER" name="verifier" />
+                                    <input type="submit" value="ENREGISTRER" name="enregistrer" />
                                     <input type="submit" value="LOGOUT" name="logout" />
                                 </td>
                             </tr>

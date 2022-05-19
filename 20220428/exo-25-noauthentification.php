@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="FR-fr">
     <head>
@@ -7,7 +10,8 @@
     </head>
     <body>
         <section>
-            <h1>Vous n'êtes pas autorisé à accéder à cette page !</h1>
+            <h1>Vous avez effectué trop de tentatives (<?php echo $_SESSION['compteur'] ?>)<br/>Vous n'êtes pas autorisé à accéder à cette page !</h1>
+            <a href="#" onclick='history.back()'>Retour</a>
         </section>
     </body>
 </html>

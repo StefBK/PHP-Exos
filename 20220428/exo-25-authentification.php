@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="FR-fr">
     <head>
@@ -8,7 +11,7 @@
     <body>
         <section>
             <h1>Vous êtes correctement authentifié !</h1>
-            <button onclick="history.back()">Retour</button>
+            <a href="#" onclick='history.back()'>Retour</a>
         </section>
     </body>
 </html>

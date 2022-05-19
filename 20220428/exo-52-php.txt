@@ -1,0 +1,5 @@
+PHP
+
+Langage de programmation dynamique.
+
+Il comprend de nombreuses possibilités de création de pages dynamiques.

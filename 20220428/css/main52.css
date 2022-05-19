@@ -51,28 +51,10 @@ td{
     text-align: center;
 }
 
-li{
-    list-style: none;
-    background-color: cyan;
-    width: 10%;
-    margin: 10px auto;
-    border: 1px solid darkorchid;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-a{
-    text-decoration: none;
-}
-
-input.btn{
-    text-align: center;
-}
-
-.tabverif{
-    color: white;
-}
-
-.total_prix{
-    text-align: right;
+div{
+    background-color: rgba(148, 0, 211, 0.5);
+    color: cyan;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid cyan;
 }

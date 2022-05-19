@@ -2,6 +2,8 @@
     session_start();
     if($_SESSION['acces']!="oui"){
         header("Location:exo-50.php");
+        // Faire un EXIT dès que HEADER
+        exit();
     }else{
         echo "Bonjour Cher(Chère) Client(e) ".$_SESSION['nom']."<br/>";
         if(isset($_SESSION['php'])){

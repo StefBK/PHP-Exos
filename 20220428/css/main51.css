@@ -48,7 +48,7 @@ tr{
 }
 
 td{
-    text-align: left;
+    text-align: center;
 }
 
 li{
@@ -67,4 +67,12 @@ a{
 
 input.btn{
     text-align: center;
+}
+
+.tabverif{
+    color: white;
+}
+
+.total_prix{
+    text-align: right;
 }
