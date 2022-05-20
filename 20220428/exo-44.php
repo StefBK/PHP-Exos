@@ -11,7 +11,7 @@
     <body>
         <h1>Gestion des Cookies</h1>
         <?php
-        // Un cookie récupère grâce à des variables d'enrivonnement les habitudes de navigation, le SE, etc. et le nb de visites. Le cookie a une durée de vie. Souvent sur 1 an.
+        // Un cookie récupère grâce à des variables d'environnement les habitudes de navigation, le SE, etc. et le nb de visites. Le cookie a une durée de vie. Souvent sur 1 an.
 
         // Création du Cookie
         setcookie('Prénom','Dédé');

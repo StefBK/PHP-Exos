@@ -1,17 +1,18 @@
 <?php
+
     if(isset($_POST['envoyer'])){
         $gold="gold.txt";
-        $next=str_repeat("<>~<>",10);
+        $next=str_repeat("_",100);
         $fichier=fopen($gold,"a+");
         $date=date("d/m/Y à H:i");
-        //$date=date('\l\e j-m-y à H : i : s'); => le \ empêche l'affichage correspondant à l (code pour le jour en anglais) et e (normalisation) sinon si 'le' afficherait 'tuesday UTC'
+        //$date=date('\L\e j-m-y à H : i : s'); => le \ empêche l'affichage correspondant à l (code pour le jour en anglais) et e (normalisation) sinon si 'le' afficherait 'tuesday UTC'
         $nom=$_POST['nom'];
         $objet=$_POST['objet'];
         $msg=$_POST['msg'];
         $entree="\n Le ".$date."\n".$nom." a écrit :\n".$objet." : ".$msg."\n".$next;
         fwrite($fichier,htmlspecialchars($entree));
+        $next=str_repeat("_",100);
         fclose($fichier);
-        echo $_POST['nom'];
         // méthode htmlspecialchars :
         // fwrite($fichier,htmlspecialchars($_POST['nom'])."\n");
         // Utiliser \n au lieu de br car br n'est pas interprété dans un fichier texte et les messages ne sont que sur une ligne (illisible même si pas faux)

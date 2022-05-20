@@ -10,7 +10,7 @@ if($ok1 AND $ok2){
 }else{
     $message="L'un des Cookies n'est pas déposé !";
 }
-// Voir Inspecteur - Stockahe - Cookies - Expiration
+// Voir Inspecteur - Stockage - Cookies - Expiration
 ?>
 <!DOCTYPE html>
 <html lang="FR-fr">

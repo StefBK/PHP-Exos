@@ -59,13 +59,13 @@
                 </fieldset>
             </form>
         </section>
-        <div>
-            <?php
-                //Affichage
-                if(isset($_POST['langage'])){
-                    affichage_theme($_POST['langage']);
-                }
-            ?>
-        </div>
+        
+        <?php
+            //Affichage
+            if(isset($_POST['langage'])){
+                affichage_theme($_POST['langage']);
+            }
+        ?>
+        
     </body>
 </html>
