@@ -1,3 +1,10 @@
+-- Création BDD
+CREATE DATABASE IF NOT EXISTS Gestion;
+
+-- Sélection de la BDD
+USE Gestion;
+
+
 -- Création Table Client
 CREATE TABLE client(
     Client_Int_Id int(5) NOT NULL,
@@ -9,7 +16,7 @@ CREATE TABLE client(
 );
 
 -- Population Table Client
-INSERT INTO client('Client_Int_Id','Client_Vch_Nom','Client_Vch_Prenom','Client_Vch_Cp','Client_Vch_Ville') VALUES
+INSERT INTO client(Client_Int_Id,Client_Vch_Nom,Client_Vch_Prenom,Client_Vch_Cp,Client_Vch_Ville) VALUES
     (1,'MOSQUITO','Momo','26650','DIE'),
     (2,'DU SOIR','Caca','07800','LA VOULTE'),
     (3,'LATINA','Eunice','26800',"TAIN L'HERMITAGE"),
@@ -29,7 +36,7 @@ CREATE TABLE commande(
 );
 
 -- Population Table Commande
-INSERT INTO commande('Cde_Int_IdCd','Cde_Dte_Date','Cde_Int_Qte','Cde_Float_Prix','Cde_Int_IdCd_Client_Int_Id') VALUES
+INSERT INTO commande(Cde_Int_IdCd,Cde_Dte_Date,Cde_Int_Qte,Cde_Float_Prix,Cde_Int_IdCd_Client_Int_Id) VALUES
     (1,'18/05/2022','3','19.99',1),
     (2,'20/05/2022','1','399.99',1),
     (3,'19/05/2022','2','20',2),
@@ -76,8 +83,3 @@ SELECT
 FROM client
 INNER JOIN commande ON client.Client_Int_Id=commande.Cde_Int_IdCd_Client_Int_Id
 ORDER BY Client.Client_Vch_Nom;
-
-
-
-
-
