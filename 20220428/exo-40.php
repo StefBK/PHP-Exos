@@ -1,4 +1,4 @@
-<!-- Faire idem à l'exercice 39 avec un SELECT CASE en donnant le même NAME au SUBMIT -->
+<!-- Faire idem à l'exercice 39 avec un SWITCH CASE en donnant le même NAME au SUBMIT -->
 
 <?php
 
