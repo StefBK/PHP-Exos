@@ -29,9 +29,9 @@
         $str="Ah que coucou les geeks";
         $pattern="/ou/i";
         echo preg_match_all($pattern,$str);
-        //=>Retourne 
+        //=>Retourne 2
 
-        //La Fonction preg_replace tremplace toutes les correspondance. 
+        //La Fonction preg_replace remplace toutes les correspondances. 
         $str="Ah que coucou les geeks";
         $pattern="/ou/i";
         echo preg_replace($pattern,"qua",$str);

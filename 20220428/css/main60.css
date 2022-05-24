@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Roboto&family=Roboto+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: "Comfortaa", Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+body{
+    /* margin-top: 2vh; */
+    text-align: center;
+    background-image: url(../images/FOND2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    /* color: white; */
+}
+
+h1,h2{
+    color: cyan;
+    font-family: 'Macondo', cursive;
+    font-size: 5rem;
+}
+
+section{
+    color: cyan;
+    background-color: rgba(148, 0, 211, 0.8);
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 60%;
+    margin: auto;
+    padding: 2vh 2vw 2vh 2vw;
+    /* EN+ */
+    height: 65vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+table{
+    width: 500px;
+    margin: 50px auto; 
+    /* Le "auto" centre horizontalement mais il lui faut une largeur */
+    border: 1px solid cyan;
+    border-radius: 10px;
+    padding: 10px;
+    /* EN+ */
+    height : 250px;
+}
+
+table tr{
+    height: 35px;
+}
+
+table tr td{
+    text-align: center;
+    /* EN+ */
+    width: 150px;
+    padding: 10px;
+}
+
+/* EN+ */
+table tr:nth-child(3){
+    text-align: center;
+}
+
+input[type='submit'], input[type='reset']{
+    width: 90px;
+    height: 40px;
+    color: darkorchid;
+}
+
+form{
+    margin: auto;
+}
+
+label{
+    text-align: left;
+}
+
+
+/* div{
+    background-color: rgba(148, 0, 211, 0.5);
+    color: cyan;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid cyan;
+} */

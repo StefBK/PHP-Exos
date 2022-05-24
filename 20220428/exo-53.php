@@ -54,8 +54,26 @@
                 //La fonction password-verify permet de remonter le HASH de la BDD et vérifier l'authentification
 
                 //Faire la différence entre l'encodage, le chiffrement et la cryptographie pour éviter les amalgames
-                //Une fonction existe en PHP qui compte le nombre d'erreurs de saisie de password
+                //Une fonction existe en PHP qui compte le nombre d'erreurs de saisie de password :
 
+                // 1°)ENCODAGE : L'encodage est un processus de modification d'une valeur (texte, fichier, …) pour un autre.
+                // But de l'encodage : Transformer les données afin qu'elles puissent être correctement interprétées par un autre type de système.
+
+                // 2°)CHIFFREMENT : En cryptographie, on encode un texte de telle sorte que seules des personnes autorisées puissent le déchiffrer. Ici, le processus d'encodage se nomme : "chiffrement". Le mot cryptage n'existe pas. Il existe deux modes de chiffrement.
+                        //1- Symétrique : On peut utiliser la même clé de chiffrement pour chiffrer/déchiffrer un message.
+                        //2- Asymétrique : Les clés pour chiffrer et déchiffrer sont différentes.
+                //Ainsi, seulement les personnes possédant la bonne clé peuvent accéder au message.
+                //Déchiffrer = décoder un message chiffré EN CONNAISSANT la clé de chiffrement qui a été utilisée pour le rendre incompréhensible... c'est donc très rapide.
+                //But du chiffrement : Transformer les données afin de les garder secrètes des autres et qu'elles ne puissent pas être consommées par une personne autre que le destinataire. Il faut une clef pour déchiffrer.
+
+                // 3°)CRYPTOGRAPHIE : Contrairement au terme cryptage qui n'existe pas, décrypter signifie tenter, sans la clé de déchiffrement, de retrouver le message original.
+                //Décrypter = décoder un message chiffré SANS CONNAÎTRE la clé de chiffrement qui a été utilisée pour le rendre incompréhensible... C'est un "sport" plus ou moins rapide qui est très pratiqué en temps de guerre par exemple quand on intercepte des messages chiffrés de l'ennemi. On appelle cette opération "casser la clef". "Crypter" n'a donc aucun sens dans ce contexte.
+
+                // 4°)HACHAGE : Une fonction de hachage est un algorithme permettant de modifier un texte (appelé message) en valeur de longueur fixe (appelé hash). Un hash ne peut pas être dé-haché pour trouver le message initial.
+                        //La même entrée produit toujours la même sortie.
+                        //Plusieurs entrées disparates ne doivent pas produire la même sortie.
+                        //Il ne doit pas être possible de passer de la sortie à l'entrée.
+                        //Toute modification d'une entrée donnée devrait entraîner un changement radical du hachage.
 
 
             ?>            

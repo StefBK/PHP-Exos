@@ -14,22 +14,22 @@
         //=>1
         echo diviser(0)."<br/>";
     }
-    // $error correspond au mesage de l'exception
+    // $error correspond au message de l'exception
     catch (Exception $error){
     //Traitement si erreur
-        //Methode qui retourne le message d'erreur : GETMESSAGE
+        //Méthode qui retourne le message d'erreur : GETMESSAGE
         //"->" signifie "exécute"
         echo "Exception reçue : ".$error->getMessage()."<br/>";
 
-        //Methode qui retourne la ligne où se situe le message d'erreur : GETLINE
+        //Méthode qui retourne la ligne où se situe le message d'erreur : GETLINE
         //"->" signifie "exécute"
         echo "Exception reçue : ".$error->getLine()."<br/>";
         
-        //Methode qui retourne le codee d'erreur : GETCODE
+        //Méthode qui retourne le code d'erreur : GETCODE
         //"->" signifie "exécute"
         echo "Exception reçue : ".$error->getCode()."<br/>";
 
-        //Methode qui retourne le fichier en cause : GETFILE
+        //Méthode qui retourne le fichier en cause : GETFILE
         //"->" signifie "exécute"
         echo "Exception reçue : ".$error->getFile()."<br/>";
     }
