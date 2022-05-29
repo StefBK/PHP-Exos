@@ -18,10 +18,16 @@
         </section>
         <section>
             <?php
+                //Recharge de la page PHP de recherche pour relire le code si aucune ID n'a été saisie
+                if(!isset($_POST['id'])){
+                    header('Location:exo-60-rechercheclient.php');
+                    exit();
+                }
+
                 //Récupération de la variable id du client
                 $id=htmlspecialchars($_POST['id']);
 
-                // Création de la requête pour récupérer les données du client
+                // Création de la requête pour récupérer les données du client suite à la requête
                 //2 notations possibles, notamment en concaténant sur plusieurs lignes utils si longues requêtes
                 // $rqt_search="SELECT * FROM client";
                 // $rqt_search.="WHERE Id_Client='$id'";
@@ -32,6 +38,7 @@
                 // print_r($resultat);
 
                 $data=$resultat->fetch_row();
+
             ?>
 
                 <!-- Création du formulaire pour afficher les données du client  -->
@@ -58,6 +65,7 @@
                 </form>
             <?php
                 if(isset($_POST['update'])){
+                    //Récupération des informations du formulaire mis à jour
                     $id=htmlspecialchars($_POST['id']);
                     $nom=htmlspecialchars($_POST['nom']);
                     $prenom=htmlspecialchars($_POST['prenom']);
@@ -66,15 +74,20 @@
                     $age=htmlspecialchars($_POST['age']);
                     $mail=htmlspecialchars($_POST['mail']);
 
-                    $rqt_update="UPDATE client SET Id_Client='".$id."' WHERE Id_Client='".$_POST['code']."' LIMIT 1"; 
+                    //Mise à jour des données de la table client
+                    $code=$_POST['code'];
+
+                    $rqt_update="UPDATE client SET Id_Client='$id',Nom='$nom',Prenom='$prenom',Adresse='$adresse',Ville='$ville',Age='$age',Mail='$mail' WHERE Id_Client='$code'"; 
+
+                    $resultat=$idcom->query($rqt_update);
+
+                    //Recharge de la page pour initialiser les champs à rien
+                    header('Location:exo-60-traitement.php');
                 }
 
-                //     $rqt_ajoutarticle="INSERT INTO article VALUES('$id','$designation','$prix','$categorie')";
-                //     $resultat=$idcom->query($rqt_ajoutarticle);
+                // Destruction Objet Résultat inutile, pas une obligation
+                $resultat->free();
 
-                //     // Destruction Objet Résultat
-                //     // $resultat->free();
-                // }
                 // // Fermeture de la connexion
                 $idcom->close();
             ?>

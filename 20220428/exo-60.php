@@ -5,7 +5,7 @@
     
     // Vérification du LOGIN+PASS & Compteur
     if(isset($_POST['soumettre'])){
-        // if(htmlspecialchars(isset($_POST['login'])=="jedi"&&($_POST['password']=="toor"))){=>ISSET INITULE PAS BOUTON
+        // if(htmlspecialchars(isset($_POST['login'])=="jedi"&&($_POST['password']=="toor"))){=>ISSET INUTILE PAS BOUTON
         if(htmlspecialchars($_POST['login'])=="jedi"&&($_POST['password']=="toor")){
                 header("location:exo-60-authentification.php");
             $_SESSION['compteur']=0;
