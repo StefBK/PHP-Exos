@@ -5,7 +5,7 @@
 
 //Nom du fichier = <Nom de la classe (en minuscules)>.class.php 
 
-include_once('data.class.php');
+include_once('class/data.class.php');
 ?>
 
 <!DOCTYPE html>

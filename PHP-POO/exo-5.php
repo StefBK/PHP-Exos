@@ -8,7 +8,7 @@
 //Cadre 1-c : Valeur 2
 //Cadre 2 : Renvoyer le résultat dans case en dessous
 
-include_once('calculatrice.class.php');
+include_once('class/calculatrice.class.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,34 +34,27 @@ include_once('calculatrice.class.php');
         </section>
         <section class="part2">
             <?php
+                //Si pas de REQUIRED sur les valeurs
+                //if ((isset($_POST['addition']))||(isset($_POST['soustraction']))||isset($_POST['multiplication'])||isset($_POST['division'])){
+                //Si pas de type NUMERIC
+                //if (is_numeric($_POST['a']) || is_numeric($_POST['b'])){
+                $total=new Calculatrice($_POST['a'],$_POST['b']);
                 if(isset($_POST['addition'])){
-                    $value1=$_POST['a'];
-                    $value2=$_POST['b'];
-                    
-                    $total=new Calculatrice;
-                    echo $total->addition($value1,$value2);
+                    echo $total->addition();
 
                 }else if (isset($_POST['soustraction'])){
-                    $value1=$_POST['a'];
-                    $value2=$_POST['b'];
-                    
-                    $total=new Calculatrice;
-                    echo $total->soustraction($value1,$value2);
+                    echo $total->soustraction();
 
                 }else if (isset($_POST['multiplication'])){
-                    $value1=$_POST['a'];
-                    $value2=$_POST['b'];
-                    
-                    $total=new Calculatrice;
-                    echo $total->multiplication($value1,$value2);
+                    echo $total->multiplication();
 
                 }else if (isset($_POST['division'])){
-                    $value1=$_POST['a'];
-                    $value2=$_POST['b'];
-                    
-                    $total=new Calculatrice;
-                    echo $total->division($value1,$value2);
-                }    
+                    echo $total->division();
+                }
+                //}else{
+                    //echo 'Veuillez saisir des valeurs numériques';
+                //}
+                //}    
             ?>
         </section>
     </body>

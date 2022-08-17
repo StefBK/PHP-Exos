@@ -8,17 +8,31 @@
 body{
     background-color: darkviolet;
     text-align: center;
-    margin-top: 10vh;
+    margin: auto;
+}
+
+h1{
+    margin-top: 5vh;
+}
+
+input{
+    font-size: 2rem;
+}
+
+input.ope{
+    width : 8%;
+    margin: 2vh auto;
 }
 
 .part1,
 .part2{
     border-radius: 10px;
     border: 1px solid white;
-    width: 90%;
-    margin: 5vh 5vw 5vh 5vw;
+    width: 30%;
+    margin: 5vh auto;
     padding: 2vh 2vw 2vh 2vw;
     line-height: 2rem;
+    font-size: 3rem;
 }
 
 .part1{
