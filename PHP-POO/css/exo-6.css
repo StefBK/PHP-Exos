@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+body{
+    background-color: darkviolet;
+    text-align: center;
+    margin: auto;
+}
+
+h1{
+    margin-top: 5vh;
+}
+
+input{
+    font-size: 2rem;
+}
+
+input.ope{
+    width : 80%;
+    margin: 2vh auto;
+}
+
+.part1,
+.part2{
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 80%;
+    margin: 5vh auto;
+    padding: 2vh 2vw 2vh 2vw;
+    line-height: 2rem;
+    font-size: 2rem;
+}
+
+.part1{
+    color: cyan;
+    background-color: magenta;
+    height: 20vh;
+}
+
+.part2{
+    color: magenta;
+    background-color: cyan;
+    height: 80vh;
+}
+
+
+.ope{
+    width: 10vw;
+}
+
+.val{
+    width: 90%;
+}

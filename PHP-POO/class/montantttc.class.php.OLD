@@ -1,0 +1,33 @@
+<?php
+
+class MontantTtc
+{
+    private $_ht;
+    private $_mtva;
+    const TVA=0.2;
+    
+    public function __construct(){
+        $this->_ht;
+        $this->_mtva;
+    }
+
+    public function __destruct(){
+        
+    }
+
+    public function setHt($recup){
+        $this->_ht=$recup;
+    }
+
+    public function getHt(){
+        return $this->_ht;
+    }
+
+    public function getTva(){
+        return $this->_mtva=$this->_ht*MontantTtc::TVA;
+    }
+
+    public function getTtc(){
+        return $this->_ht+$this->_mtva;
+    }
+}

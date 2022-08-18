@@ -7,7 +7,7 @@ class Tester
 // En PascalCase
 //Accolades en dessous
 {
-    //Définition d'un attribut (variable classique en procédural, visibilité publique par défaut, autes visibilités = private (accès de l'intérieur de la classe) ou protected) :
+    //Définition d'un attribut (variable classique en procédural, visibilité publique par défaut, autres visibilités = private (accès de l'intérieur de la classe) ou protected) :
     //$valeur='test';
     //Quand on définit la visibilité d'un attribut = Encapsulation
     //Durée de vie d'une variable = visibilité EN POO ou portabilité en PROC

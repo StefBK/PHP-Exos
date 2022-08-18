@@ -16,7 +16,7 @@ include_once('class/calculatrice.class.php');
     <head>
         <meta charset="utf-8"/>
         <title>PHP POO</title>
-        <link rel="stylesheet" href="exo-5.css" />
+        <link rel="stylesheet" href="css/exo-5.css" />
     </head>
     <body>
         <h1>CALCULATRICE</h1>
